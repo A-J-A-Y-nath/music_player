@@ -1,0 +1,187 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Music Player Container */
+.music-player {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px 25px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title */
+.music-player h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Song Title Display */
+#song-title {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #ffffff;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Pulse animation for song title */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+    gap: 15px;
+}
+
+/* Shared Button Styles */
+.controls button {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: #4a90e2;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popIn 0.6s ease-in-out;
+}
+
+/* Button hover effects */
+.controls button:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #9013fe, #4a90e2);
+    color: #ffffff;
+}
+
+/* Button active effect */
+.controls button:active {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pop-in animation */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Progress Section */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#current-time,
+#duration {
+    font-size: 14px;
+    color: #e6e6e6;
+    opacity: 0.9;
+}
+
+#progress-bar {
+    width: 100%;
+    margin: 0 15px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#progress-bar:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#progress-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .music-player {
+        padding: 20px 15px;
+    }
+
+    .controls button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    #song-title {
+        font-size: 16px;
+    }
+
+    #current-time,
+    #duration {
+        font-size: 12px;
+    }
+}
